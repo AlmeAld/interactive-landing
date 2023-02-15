@@ -1,6 +1,11 @@
 @import "./styles/variables";
 @import "./styles/mixins";
 
+.wrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
 .main {
   padding: 96px 20px 82px;
 
