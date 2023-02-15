@@ -1,0 +1,486 @@
+@import "./styles/variables";
+@import "./styles/mixins";
+
+.main {
+  padding: 96px 20px 82px;
+
+  font-size: 0.875rem;
+  background: linear-gradient(180deg, #f9e6e6 0%, #ebacac 100%);
+  box-shadow: 0px 14px 44px rgb(0 0 0 / 9%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  @include customMinBreakpoint($smBreakpoint) {
+    padding-top: 146px;
+    padding-bottom: 150px;
+  }
+
+  &__wrapper {
+    @include customMinBreakpoint($smBreakpoint) {
+      max-width: 953px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 130px;
+    }
+  }
+
+  &__product-info-container {
+    padding-top: 28px;
+  }
+
+  &__hero-image-container {
+    display: flex;
+    padding-left: 50px;
+  }
+
+  &__hero-image {
+    margin: auto;
+    filter: drop-shadow(40px 102px 45px rgba(0, 0, 0, 0.25));
+    transform: rotate(15deg);
+
+    @include customMinBreakpoint($smBreakpoint) {
+      height: 403.13px;
+      width: 148.5px;
+    }
+  }
+
+  &__flavor-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include customMinBreakpoint($smBreakpoint) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__flavor-label {
+    margin: 0 5px 0 0;
+  }
+
+  &__flavor-button {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    color: rgba(0, 0, 0, 0.9);
+    line-height: 19px;
+    margin-right: 10px;
+    padding: 0 16px;
+
+    &--active {
+      background: rgba(255, 0, 0, 0.1);
+      border: none;
+    }
+  }
+
+  &__product-description-container {
+    margin: 17px 0;
+
+    @include customMinBreakpoint($smBreakpoint) {
+      margin: 10px 0 24px;
+    }
+  }
+
+  &__product-name {
+    color: $mainColor;
+    font-weight: $lightWeight;
+    font-size: 20px;
+    margin: 0 0 9px 0;
+
+    @include customMinBreakpoint($smBreakpoint) {
+      font-size: 40px;
+      line-height: 54px;
+      margin: 0 0 13px 0;
+    }
+  }
+
+  &__product-description {
+    font-weight: $lightWeight;
+    margin: 0;
+
+    @include customMinBreakpoint($smBreakpoint) {
+      font-size: 17px;
+      line-height: 23px;
+    }
+  }
+
+  &__buy-button {
+    background: $mainColor;
+    border: none;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    font-weight: $regularWeight;
+
+    @include customMinBreakpoint($smBreakpoint) {
+      width: initial;
+      padding: 10px 52px;
+    }
+  }
+
+  &__certifications-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+    margin-top: 36px;
+
+    @include customMinBreakpoint($smBreakpoint) {
+      margin-top: 33px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__scroll-button {
+    background: $mainColor;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// nutritional info section
+.nutritional-info {
+  padding: 77px 20px 28px;
+  position: relative;
+  @include customMinBreakpoint($smBreakpoint) {
+    padding-bottom: 68px;
+  }
+
+  &__wrapper {
+    @include customMinBreakpoint($smBreakpoint) {
+      max-width: 785px;
+      margin: auto;
+    }
+  }
+
+  &__title {
+    color: $mainColor;
+    font-weight: $lightWeight;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: 2.4px;
+    margin-bottom: 28px;
+    @include customMinBreakpoint($smBreakpoint) {
+      font-size: 32px;
+      margin-bottom: 35px;
+      line-height: 43.58px;
+    }
+  }
+
+  &__content {
+    @include customMinBreakpoint($smBreakpoint) {
+      display: flex;
+      gap: 41px;
+    }
+  }
+
+  &__content-description {
+    @include customMinBreakpoint($smBreakpoint) {
+      flex: 2;
+    }
+  }
+
+  &__description {
+    line-height: 19px;
+    margin: 0;
+    font-size: 0.875rem;
+  }
+  &__ingredients {
+    line-height: 19px;
+    margin: 0;
+    font-weight: $lightWeight;
+    font-size: 0.875rem;
+  }
+
+  &__ingredients-label {
+    font-size: 0.875rem;
+    margin-bottom: 0;
+    @include customMinBreakpoint($smBreakpoint) {
+      margin-top: 44px;
+    }
+  }
+
+  &__details {
+    background-color: #fafafa;
+    font-size: 12px;
+    font-weight: $lightWeight;
+    color: $mainColor;
+    line-height: 36px;
+    margin-top: 55px;
+
+    @include customMinBreakpoint($smBreakpoint) {
+      flex: 2;
+      margin-top: 0;
+    }
+  }
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+
+    &:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+  }
+
+  &__detail-value {
+    font-size: 14px;
+    flex: 0 0 90px;
+    @include customMinBreakpoint($smBreakpoint) {
+      flex: 0 0 110px;
+    }
+  }
+}
+
+// vitalinea family section
+.vitalinea-family {
+  background: url(/src/assets/background.jpg);
+  padding: 40px 0 97px 9px;
+  position: relative;
+  @include customMinBreakpoint($smBreakpoint) {
+    padding-top: 95px;
+    padding-bottom: 61px;
+  }
+
+  &__wrapper {
+    max-width: 1225px;
+    margin: auto;
+  }
+
+  &__title {
+    text-align: center;
+    color: $mainColor;
+    font-weight: $lightWeight;
+    font-size: 22px;
+    line-height: 30px;
+    text-transform: uppercase;
+    margin: 0;
+    @include customMinBreakpoint($smBreakpoint) {
+      font-size: 44px;
+      line-height: 60px;
+    }
+  }
+
+  &__products {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    align-items: flex-end;
+    gap: 7px;
+    margin-top: 107px;
+    @include customMinBreakpoint($smBreakpoint) {
+      justify-content: space-between;
+      margin-top: 55px;
+    }
+  }
+
+  &__griego-image {
+    @include customMinBreakpoint($smBreakpoint) {
+      width: 356px;
+    }
+  }
+  &__azucar-image {
+    @include customMinBreakpoint($smBreakpoint) {
+      width: 228px;
+    }
+  }
+  &__bebible-image {
+    @include customMinBreakpoint($smBreakpoint) {
+      width: 296px;
+    }
+  }
+
+  &__product-name {
+    color: $mainColor;
+    font-weight: $lightWeight;
+    font-size: 11px;
+    line-height: 15px;
+    text-align: center;
+    @include customMinBreakpoint($smBreakpoint) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+}
+
+// footer styles
+.footer {
+  max-width: 1380px;
+  margin: auto;
+
+  &__wrapper {
+    padding: 27px 20px 36px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logos {
+    &-danone {
+      width: 50px;
+      text-align: left;
+    }
+    &-vitalinea {
+      text-align: right;
+      width: 80px;
+    }
+  }
+
+  &__info {
+    font-size: 11px;
+    flex: 1 1 100%;
+    order: 1;
+    font-weight: $regularWeight;
+    line-height: 15px;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include customMinBreakpoint($smBreakpoint) {
+      order: unset;
+      flex: 1;
+    }
+  }
+
+  &__links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    li {
+      padding: 0 5px;
+      @include customMinBreakpoint($smBreakpoint) {
+        padding: 0 18px;
+      }
+      &:not(:last-of-type) {
+        border-right: 1px solid $blackColor;
+      }
+      a {
+        color: $blackColor;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__copyright {
+    margin: 0;
+  }
+}
+
+// fresa styles
+.fresa {
+  &-main-1 {
+    position: absolute;
+    top: 76px;
+    left: -60px;
+    transform: rotateY(198deg) rotateZ(355deg) rotateX(12deg);
+    width: 117px;
+    filter: drop-shadow(0px 62px 34px rgba(0, 0, 0, 0.0636606));
+    @include customMinBreakpoint($smBreakpoint) {
+      top: -26px;
+      transform: rotateY(140deg) rotateZ(341deg) rotateX(14deg);
+      left: 100px;
+    }
+  }
+  &-main-2 {
+    position: absolute;
+    top: -89px;
+    right: -123px;
+    width: 251px;
+    transform: rotateX(51deg);
+    filter: blur(13.5914px);
+    @include customMinBreakpoint($smBreakpoint) {
+      top: -250px;
+      right: 200px;
+      width: 400px;
+    }
+  }
+  &-main-3 {
+    display: none;
+    @include customMinBreakpoint($smBreakpoint) {
+      display: block;
+      position: absolute;
+      bottom: 120px;
+      right: 100px;
+      width: 139px;
+      filter: drop-shadow(0px 62px 34px rgba(0, 0, 0, 0.0636606));
+    }
+  }
+  &-nutritional-1 {
+    position: absolute;
+    width: 100px;
+    left: -60px;
+    bottom: 340px;
+    transform: rotate(327deg);
+    @include customMinBreakpoint($smBreakpoint) {
+      width: 317px;
+      top: -220px;
+      left: -200px;
+      filter: blur(6.7957px);
+      transform: unset;
+    }
+  }
+  &-nutritional-2 {
+    display: none;
+    @include customMinBreakpoint($smBreakpoint) {
+      display: block;
+      position: absolute;
+      top: 180px;
+      left: 20px;
+      width: 117px;
+      filter: drop-shadow(0px 62px 34px rgba(0, 0, 0, 0.0636606));
+      transform: rotateX(52d eg) rotateZ(92deg);
+    }
+  }
+  &-nutritional-3 {
+    position: absolute;
+    top: 120px;
+    right: -40px;
+    width: 115px;
+    filter: blur(2.71828px) drop-shadow(0px 62px 34px rgba(0, 0, 0, 0.0636606));
+    @include customMinBreakpoint($smBreakpoint) {
+      right: -70px;
+      width: 187px;
+    }
+  }
+  &-family-1 {
+    display: none;
+    @include customMinBreakpoint($smBreakpoint) {
+      display: block;
+      position: absolute;
+      width: 181px;
+      top: -180px;
+      left: -90px;
+      transform: rotate(332deg);
+      filter: drop-shadow(0px 62px 34px rgba(0, 0, 0, 0.0636606));
+    }
+  }
+  &-family-2 {
+    display: none;
+    @include customMinBreakpoint($smBreakpoint) {
+      display: block;
+      position: absolute;
+      width: 139px;
+      top: -60px;
+      left: 300px;
+      filter: drop-shadow(0px 62px 34px rgba(0, 0, 0, 0.0636606));
+    }
+  }
+  &-family-3 {
+    display: none;
+    @include customMinBreakpoint($smBreakpoint) {
+      display: block;
+      position: absolute;
+      top: -160px;
+      right: -160px;
+      width: 317px;
+      filter: blur(6.7957px);
+    }
+  }
+}

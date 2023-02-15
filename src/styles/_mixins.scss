@@ -1,0 +1,7 @@
+@import "./variables";
+
+@mixin customMinBreakpoint($width) {
+  @media (min-width: #{$width}px) {
+    @content;
+  }
+}

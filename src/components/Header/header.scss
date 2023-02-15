@@ -1,0 +1,73 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.header {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.673828) 100%
+  );
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  &.bg-white {
+    background: $whiteColor;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px 12px 22px;
+    gap: 16px;
+    flex-wrap: wrap;
+    @include customMinBreakpoint($smBreakpoint) {
+      flex-wrap: nowrap;
+      max-width: 1225px;
+      margin: auto;
+    }
+  }
+
+  &__logo-container {
+    cursor: pointer;
+  }
+
+  &__menu-button {
+    @include customMinBreakpoint($smBreakpoint) {
+      display: none;
+    }
+  }
+  &__menu-list {
+    display: none;
+    padding-left: 0;
+    flex: 1 1 100%;
+    list-style: none;
+    &.open {
+      display: block;
+    }
+    @include customMinBreakpoint($smBreakpoint) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+  &__menu-item {
+    padding-bottom: 20px;
+    text-align: center;
+    @include customMinBreakpoint($smBreakpoint) {
+      padding-right: 50px;
+      padding-bottom: 0;
+    }
+  }
+  &__social {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+  }
+  &__menu--link {
+    text-decoration: none;
+    color: $blackColor;
+    font-size: 1rem;
+  }
+}
